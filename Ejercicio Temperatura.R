@@ -26,17 +26,16 @@ head(temperatura)
 write.csv(temperatura, "temp_final.csv")
 
 
-temp <- temperatura [, 2:13]
+temp <- temperatura[ , 2:13]
 temp10 <- temperatura[11:21 , 2:13]
 temperatura[2,2]
 
 colores <-c ("navajowhite", "salmon", "skyblue")
 
 boxplot(temp, col = colores, main = "Comportamiento temperatura (2000 a 2020)", xlab = "Meses", ylab = "Temperatura (C)")
-
+boxplot(temp10, col = colores, main = "Media de temperaturas del 2010 al 2020", xlab = "Meses", ylab= "Temperatura (°C)")
 
 # Importar datos web ------------------------------------------------------
-
 
 url <-"https://repodatos.atdt.gob.mx/api_update/senasica/actividades_inspeccion_movilizacion/29_actividades-inspeccion-movilizacion.csv"
 
@@ -48,4 +47,3 @@ senasica <- read.csv (url, header = T)
 senasica <- read.csv (url2, header = T)
 head (senasica[, c(1,3:12)])
 View (senasica)
-
