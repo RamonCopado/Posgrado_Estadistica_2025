@@ -55,8 +55,10 @@ url2 <- paste0("https://repodatos.atdt.gob.mx/api_update/",
                "29_actividades-inspeccion-movilizacion.csv")
 
 senasica <- read.csv (url, header = T)
+
 senasica2 <- read.csv (url2, header = T)
 head (senasica2[, c(1,3:12)])
+
 View (senasica)
 View (senasica2)
 
