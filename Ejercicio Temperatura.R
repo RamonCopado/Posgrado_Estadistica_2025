@@ -49,21 +49,6 @@ boxplot(temp10, col = colores,
 url <-"https://repodatos.atdt.gob.mx/api_update/senasica
 /actividades_inspeccion_movilizacion/29_actividades-inspeccion
 -movilizacion.csv"
-boxplot(temp, col = colores,
-        main = "Comportamiento temperatura (2000 a 2020)", 
-        xlab = "Meses", 
-        ylab = "Temperatura (C)")
-
-boxplot(temp10, col = colores, 
-        main = "Media de temperaturas del 2010 al 2020", 
-        xlab = "Meses",
-        ylab= "Temperatura (°C)")
-
-# Importar datos web 
-
-url <-"https://repodatos.atdt.gob.mx/api_update/senasica
-/actividades_inspeccion_movilizacion/29_actividades
--inspeccion-movilizacion.csv"
 
 url2 <- paste0("https://repodatos.atdt.gob.mx/api_update/",
                "senasica/actividades_inspeccion_movilizacion/",
