@@ -17,6 +17,7 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Sacar varianza
   +Hacer grafica con diferentes colores
   +Poner titulo y nombres al eje de x,y
+  +Poder ver y comparar 2 graficas en la misma paguina
   +Observamos datos por conjunto para ver normalidad
   +Pruebas de normalidad Shapiro
   +Revisar Homogeneidad
