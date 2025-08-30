@@ -63,35 +63,35 @@ suma_mensual * 5 * 2
 suma_mensual * 10
 
 ###Nombre de los objetos
-#####Hay ciertas reglas que debe seguir al crear objetos y variables. Los nombres de 
-#####los objetos no pueden comenzar con un dígito y no pueden contener otros caracteres 
-#####como una coma o un espacio.
+####Hay ciertas reglas que debe seguir al crear objetos y variables. Los nombres de 
+####los objetos no pueden comenzar con un dígito y no pueden contener otros caracteres 
+####como una coma o un espacio.
 
-#Los siguientes ejemplos son correctos para el nombre de los objetos.
+####Los siguientes ejemplos son correctos para el nombre de los objetos.
 
-yo_uso_guion_bajo # Correcto
-otras.personas.usan.punto # Correcto
-OtrosUsanMayusculas # Correcto
+#####yo_uso_guion_bajo # Correcto
+#####otras.personas.usan.punto # Correcto
+#####OtrosUsanMayusculas # Correcto
 
-#Los siguientes características en los nombres de los objetos no son aceptados 
-#(asignaciones invalidas):
+####Los siguientes características en los nombres de los objetos no son aceptados 
+####(asignaciones invalidas):
 
-#no puede iniciar con un número
-# Incorecto 5variable <- 5 
+#####no puede iniciar con un número
+##### Incorecto 5variable <- 5 
 
-# no puede iniciar con guión bajo
-# Incorecto _invalid <- 10
+##### no puede iniciar con guión bajo
+##### Incorecto _invalid <- 10
 
-# no puede contener una coma
-# Incorecto my,variable <- 3
+##### no puede contener una coma
+##### Incorecto my,variable <- 3
 
-# no puede contener espacios
-# Incorecto my variable <- 1
+##### no puede contener espacios
+##### Incorecto my variable <- 1
 
-# Es correcto pero muy largo:
- this_is_a_really_long_name <- 3.5
+##### Es correcto pero muy largo:
+##### this_is_a_really_long_name <- 3.5
  
-#Funciones
+##Funciones
 # R tiene muchas funciones [Crawley, 2007, Field et al., 2012, R Core Team, 2016]. 
 # Para usar una función debes escribir su nombre seguido de paréntesis. Dentro del
 # paréntesis se establece una entrada. La mayoría de las funciones producirán 
