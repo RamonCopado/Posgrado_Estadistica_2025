@@ -317,6 +317,4 @@ Cualitativas_bovinos
 
 #Lo se porque lo leí y pregunte que analiza un histograma y resulta que mide
 #Frecuencia, tiempo, etc. y me apoye en videos en linea.
-#
-#
-#
+
