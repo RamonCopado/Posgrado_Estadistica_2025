@@ -52,3 +52,4 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Prueba de T
   +Un clasico error estadistico
   +Medir el efecto del efecto
+  +Identificamos Hipotesis nula, Alternativa
