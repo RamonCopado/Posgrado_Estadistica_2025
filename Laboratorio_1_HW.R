@@ -194,6 +194,7 @@ barplot(gastos_ordenados, main = "Gastos Mensuales",
 #preguntas de una encuesta aplicada a estudiantes universitarios en una clase de
 #estadística:
 
+#Respuesta:
 #Nombre de estudiante.    cualitativa
 #Fecha de nacimiento (p. Ej., 21/10/1995).   cuantitativa
 #Edad (en años). cuantitativa
@@ -220,6 +221,7 @@ Cuantitativa
 #   instituciones, etc.) y obtenga una lista de 14 variables: 
 #   7 cuantitativas y 7 categóricas.
 
+#Respuesta:
 #Voy a escoger el objegto animales
 # Las 7 variables cuantitativas son (con medición numérica):
       # 1.- Peso corporal
@@ -269,8 +271,8 @@ Cualitativas_bovinos
                                                                               
 #¿Cuál es la cantidad promedio de horas que los estudiantes de universidades 
 #públicas trabajan cada semana?
-
-    #Individuos de interes = Estudiantes de universidades publicas
+#Respuesta
+#Individuos de interes = Estudiantes de universidades publicas
     #Variable = Cantidad promedio de horas que trabajan cada semana
     #Tipo de variable = Cuantitativa continua ya que se expresa en cantidades 
                      #numéricas y pueden tomar cualquier valordentro de un rango
@@ -278,26 +280,43 @@ Cualitativas_bovinos
 
 #  ¿Qué proporción de todos los estudiantes universitarios de México están 
 #inscritos en una universidad pública?
+#Respuesta
+#Individuos de interes = Estudiantes inscritos en universidades de México
+#Variable =  pública o privada
+#Tipo de variable = Cualitativa nominal, porque las categorías (pública/privada)
+                  #no tienen un orden intrínseco y son simplemente nombres o 
+                  #etiquetas para la institución. No se puede decir que una es
+                  #"mayor" o "menor" que la otra en un sentido numérico, 
+                  #solo que son diferentes. 
 
-#Individuos de interes = Estudiantes inscritos en universidades públicas de México
-#Variable = Proporción
-#Tipo de variable = Cuantitativa, ya que representa una variable que se puede medir.
 
 #  En las universidades públicas, ¿las estudiantes femeninas tienen un promedio
 # de CENEVAL más alto que los estudiantes varones?
-
-#Individuos de interes = Estudiantes de universidades publicas con promedio más
-#alto en el Ceneval
-#Variable= Femeninas o Varones
-#Tipo de variable = Cualitativo,  
+#Respuesta
+#Individuos de interes = Estudiantes de universidades publicas que presentan
+                        #el examen CENEVAL.
+#Variable= Promedio
+#Tipo de variable = Cuantitativa continua,ya que los puntajes pueden tomar 
+                  # valores numéricos dentro de un rango y son medibles.   
 
 #  ¿Es más probable que los atletas universitarios reciban asesoramiento 
 #académico que los atletas no universitarios?
-
-#Individuos de interes = Estudiantes de universidades publicas
-#Variable
-#Tipo de variable
+#Respuesta
+#Individuos de interes = Los atletas universitarios
+#Variable = Asesoramiento
+#Tipo de variable = Cualitativa nominal, es si o no.
 
 #  Si reuniéramos datos para responder a las preguntas de la investigación 
 #anterior, ¿qué datos podrían analizarse mediante un histograma? ¿Cómo lo sabes?.
+#Respuesta
+#Los datos a utilizar serían;
+#a frecuencia con la que los atletas (universitarios y no universitarios) usan
+    #el asesoramiento académico
+#la cantidad de tiempo que dedican al asesoramiento, 
+#o el número de horas de estudio adicionales que se brindan a través de este servicio
 
+#Lo se porque lo leí y pregunte que analiza un histograma y resulta que mide
+#Frecuencia, tiempo, etc. y me apoye en videos en linea.
+#
+#
+#
