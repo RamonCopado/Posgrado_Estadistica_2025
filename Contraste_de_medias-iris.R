@@ -14,3 +14,11 @@ url2<-paste0("https://gist.githubusercontent.com/netj/8836201/raw/",
 iris<-read.csv(url,header=T)
 iris<-read.csv(url2,header=T)
 View (iris)
+
+
+# Ejercicio
+#En la base iris, las especies versicolor y virginica suelen diferir en sus
+#rasgos florales. Nos interesa evaluar si el largo del pétalo (Petal.Length)
+#presenta diferencias en su media poblacional entre estas dos especies.
+head(iris)
+summary(iris)
