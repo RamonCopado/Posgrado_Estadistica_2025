@@ -84,4 +84,4 @@ summary(data_sub)
 
 #Identificar las variables Petal.Lenght y determina las estadísticas descriptivas
 #para las dos especies.
-
+continuara
