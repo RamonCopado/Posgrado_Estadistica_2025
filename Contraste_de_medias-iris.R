@@ -72,20 +72,15 @@ par(mfrow=c(1,1))
 # +Selección de especies: elija las especies versicolor y virginica de la base y,
 #  enfoque su análisien la variable Pental.Length
 
-
+variety<-("Versicolor,Virginica")
 
 #Vamos a introducir el operador%in% para realizar el subset. En R, el
 #operador%in% se utiliza para preguntar si un valor pertenece a un conjunto 
 # de valores. Devuelve un vector lógico (TRUE o FALSE) indicando si cada 
 #elemento de la izquierda está contenido dentro del vector de la derecha.
 
-variety<-("Versicolor,Virginica")
-
 data_sub <-subset(iris, variety %in% c("Versicolor","Virginica"))
 table(data_sub$variety)
-
-
-
 
 
 #Instrucción de tarea
@@ -127,28 +122,16 @@ table(data_sub$variety)
       # Revisar homogeneidad
         var.test(data_sub$petal.length ~ data_sub$variety)
 
-
       # Prueba de T
-
         t.test(data_sub$petal.length ~ data_sub$variety, alternative = "two.sided",
                var.equal = T)
         t.test(data_sub$petal.length ~ data_sub$variety, alternative = "two.sided", 
                var.equal = F)
-
-          # Error estadistico de como plantear la pregunta
-            t.test(data_sub$petal.length ~ data_sub$variety, alternative = "greater", 
-                   var.equal = T)
-            t.test(data_sub$petal.length ~ data_sub$variety, alternative = "greater", 
-                   var.equal = F)
-
-
-    
-    
     
   #Ejecute la prueba en R justificando el tipo de prueba (Welch cuando las 
   #varianzas son diferentes o clásica, cuando las varainzas son iguales).
     
-    
+   help(Welch)
     
   #Calcule e interprete el tamaño del efecto (Cohen’s d)
             # Medir el efecto del efecto
@@ -160,18 +143,36 @@ table(data_sub$variety)
               (mean (x) - mean (y)) / sp
             }
             
-            d1_cal <- cohens_efecto(df_ctrl$IE, df_fert$IE)
+            d1_cal <- cohens_efecto(df_Versicolor$petal.length, df_Virginica$petal.length)
             d1_cal
             
 
 #Visualización
     # Genere una gráfica comparativa (boxplot, violinplot, etc.) que muestre 
     #las diferencias entre especies.
-    
+            colores <-c ("navajowhite", "salmon")
+            
+            # Crear un boxplot data_sub
+            boxplot (data_sub$petal.length~ data_sub$variety, col = colores,
+                     main = "Distribución del largo de pétalo en 2 especies",
+                     xlab = "Variedad", 
+                     ylab = "Largo de pétalo (cm)")
+              
+            
+           violinplot (data_sub$petal.length~ data_sub$variety, col = colores,
+                     main = "Distribución del largo de pétalo en 2 especies",
+                     xlab = "Variedad", 
+                     ylab = "Largo de pétalo (cm)")
     
 #Informe escrito:
     #Redacte una síntesis (máx. 1 cuartilla) que incluya:
       #• Planteamiento del problema y de las hipótesis.
       #• Resultados numéricos y gráficos.
       #• Interpretación estadística y biológica.
+#Se realizó una prueba t para muestras independientes ( Ctrl vs Fert),
+#asumiendo varianzas iguales. Se encontró una diferencia, t(40) = -2.981253, 
+#p =0.00487. El grupo Fert mostró una media mayot (0.9066667) que el grupo 
+#Ctrl (0.767619). La diferencia de medias fue de -0.139 y el IC 95% = 
+#[-0.23, -0.04]. El tamaño del efecto fue grande (d=-0.9200347) lo que indica 
+#que la fertilización tuvo un efecto sustancial sobre el índice de calidad.
     
