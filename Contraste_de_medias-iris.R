@@ -208,6 +208,7 @@ data_sub
             library(vioplot)
             vioplot(data_sub)
             
+            
             gglot(data_sub,aes(x = variety, y =petal.length, fill = variety))+
               geom_boxplot()+labs(title = "Distribución del largo de pétalo en
                       2 especies", x = "Variedad", y= "Largo de pétalo (cm)")
