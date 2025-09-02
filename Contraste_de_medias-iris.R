@@ -213,7 +213,7 @@ data_sub
 #comprobando varianzas iguales. Se encontró una diferencia, t(98) = -12.604, 
 #p =< 2.2e-16. El grupo Virginica mostró una media mayor (5.552) que el grupo 
 #Versicolor (4.26). La diferencia de medias fue de 1.292 y el IC 95% = 
-#[-0.23, -0.04]. El tamaño del efecto fue grande (d=-0.9200347) lo que indica 
-#que la fertilización tuvo un efecto sustancial sobre el índice de calidad.
+#[-0.23, -0.04]. El tamaño del efecto fue grande (d=-2.520756) lo que indica 
+#que la variedad tuvo un efecto sustancial sobre el largo del petalo.
     
             
