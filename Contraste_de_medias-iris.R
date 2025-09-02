@@ -151,9 +151,6 @@ data_sub
     #diferencias significativas entre las varianzas de las dos especies; por lo 
     #tanto si hay homogeneidad y se utilizará la prueba de T clásica.
     
-      # Revisar homogeneidad
-        var.test(data_sub$petal.length ~ data_sub$variety)
-
       # Prueba de T
         t.test(data_sub$petal.length ~ data_sub$variety, alternative = "two.sided",
                var.equal = T)
@@ -212,7 +209,20 @@ data_sub
 #que la variedad tuvo un efecto sustancial sobre el largo del petalo.
             
 
-                       
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+# Informe Escrito ---------------------------------------------------------
+
                         #Informe escrito:
     #Redacte una síntesis (máx. 1 cuartilla) que incluya:
       #• Planteamiento del problema y de las hipótesis.
