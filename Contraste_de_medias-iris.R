@@ -8,11 +8,27 @@
 ##Ramón Copado García
 ##Matricula 1059439
 
+
+##Objetivo
+#El objetivo de esta práctica es que el estudiante se familiarice con el entorno
+#de R y RStudio, explorando una de las bases de datos más utilizadas en 
+#estadística (iris), con el fin de: 
+#  +Describir y comprender la estructura de un conjunto de datos reales.
+#  +Aplicar pruebas estadísticas básicas (prueba t de dos muestras) para 
+#    contrastar hipótesis sobre medias poblacionales.
+#  +Interpretar los resultados tanto en términos estadísticos (valores de p, 
+#    intervalos de confianza, tamaño del efecto) como en términos biológicos 
+#    (diferencias entre especies de iris).
+#  +Desarrollar habilidades prácticas en la escritura de código reproducible en 
+#    R y en la presentación de resultados mediante reportes en formato PDF.
+
+##BAse de datos Iris
+
 #Importar datos de Github
 
 url<-("https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
 url2<-paste0("https://gist.githubusercontent.com/netj/8836201/raw/",
-              "6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
+             "6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
 
 iris<-read.csv(url,header=T)
 
@@ -23,27 +39,20 @@ View (iris)
 #Tambien se puede utilizar, data("iris"), y trabajar sobre la base de datos
 
 
-
 # Ejercicio
 #En la base iris, las especies versicolor y virginica suelen diferir en sus
 #rasgos florales. Nos interesa evaluar si el largo del pétalo (Petal.Length)
 #presenta diferencias en su media poblacional entre estas dos especies.
-head(iris)
-summary(iris)
-dim(iris)
-names(iris)
-str(iris)
-df<-iris[3]
-boxplot(df)
+head(iris) #Primeras 6 filas
+summary(iris) #Resumen estadistico
+dim(iris) #Dimensiones de filas y columnas
+names(iris) #Revisar los nombre de las columnas
+str(iris) #Información sobre dimensiones, variables, el tipo de dato y valores
+df<-iris[3] #data Frame de la variable a medir
 
+by(iris[3],iris$variety, summary) #Resumen estadistico de la Variable a trabajar
 
-iris$variety <- as.factor(iris$variety)
-class(iris$variety)
-
-summary(iris)
-
-by(iris[1:4],iris$variety, summary)
-
+###SOlo informativo y visualizar como sub ejercicio
 tapply(iris$petal.length, iris$variety, mean)
 
 tapply(iris$petal.length, iris$variety, sd)
@@ -68,9 +77,19 @@ par(mfrow=c(1,1))
 
 #Lo anterior es solo para visualisar las 150 muestras.
 
-#Datos a trabajar
-# +Selección de especies: elija las especies versicolor y virginica de la base y,
-#  enfoque su análisien la variable Pental.Length
+
+
+
+##Ejercicio
+  #Datos a trabajar
+
+#A partir de la base de datos iris disponible en R, realice lo siguiente:
+
+  #+Selección de especies: elija las especies versicolor y virginica de la base 
+  #+y enfoque su análisis en la variable Petal.Length.
+
+data_sub <-subset(iris, variety %in% c("Versicolor","Virginica"))
+table(data_sub$variety)
 
 variety<-("Versicolor,Virginica")
 
@@ -82,6 +101,12 @@ variety<-("Versicolor,Virginica")
 data_sub <-subset(iris, variety %in% c("Versicolor","Virginica"))
 table(data_sub$variety)
 
+variety<-("Versicolor,Virginica")
+
+data_sub <-subset(iris, variety %in% c("Versicolor","Virginica"))
+table(data_sub$variety)
+data_sub
+
 
 #Instrucción de tarea
 
@@ -90,35 +115,42 @@ table(data_sub$variety)
     head(data_sub)
     summary(data_sub)
 
-  #Identificar las variables Petal.Length y determina las estadísticas descriptivas
+       #Identificar las variables Petal.Length y determina las estadísticas descriptivas
   #para las dos especie
-    tapply(data_sub$petal.length, data_sub$variety, summary)
-    tapply(data_sub$petal.length, data_sub$variety, mean)
-    tapply(data_sub$petal.length, data_sub$variety, sd)
-    tapply(data_sub$petal.length, data_sub$variety, var)
+    tapply(data_sub$petal.length, data_sub$variety, summary) #Resumen estadistico
+    tapply(data_sub$petal.length, data_sub$variety, mean) #Solo práctica
+    tapply(data_sub$petal.length, data_sub$variety, sd) #Solo práctica
+    tapply(data_sub$petal.length, data_sub$variety, var) #Solo práctica
     by(data_sub[3], data_sub$variety,summary)
 
 #Prueba estadística
-  #Defina una pregunta de invertigación sobre la variable Petal.Length
-  
-    
-  #Plantee formalmente las hipótesis estadísticas para una prueba t de dos 
-  #muestras independientes (two.sided).
-      # Observar datos
-       # Aplicar subconjunto para cada tratamiento
-    
-    df_Versicolor <- subset(data_sub, variety == "Versicolor")
-    df_Virginica <- subset(data_sub, variety == "Virginica")
-    par(mfrow=c(1,2))
-    qqnorm(df_Versicolor$petal.length); qqline(df_Versicolor$petal.length)
-    qqnorm(df_Virginica$petal.length); qqline(df_Virginica$petal.length)
-    par(mfrow=c(1,1))
-    
-    
-      # Prueba normalidad SHAPIRO.TEST
-        shapiro.test(df_Versicolor$petal.length)
-        shapiro.test(df_Virginica$petal.length)
+  #+Defina una pregunta de invertigación sobre la variable Petal.Length
 
+    #¿Hay diferencia significativa en la longitud de los pétalos (Petal.Length)
+    # entre las variedades Versicolor y Virginica de la base de datos iris?
+    
+  #+Plantee formalmente las hipótesis estadísticas para una prueba t de dos 
+   #muestras independientes (two.sided).
+    
+    # + H0 (nula): No existen diferencias significativas entre la longitud de 
+    #los petalos de las variedades Versicolor y Virginica de la base de datos iris.
+    
+    # + H1 (alternativa): Existen diferencias significativas entre la longitud 
+    #de los petalos de las variedades Versicolor y Virginica de la base de datos iris.
+ 
+  #+Ejecute la prueba en R justificando el tipo de prueba (Welch cuando las 
+    #varianzas son diferentes o clásica, cuando las varainzas son iguales).
+
+
+    # Revisar homogeneidad
+    var.test(data_sub$petal.length ~ data_sub$variety)  
+    
+      # Observar datos
+# Al utilizar F test para comparar dos varianzas, la información que nos arroja 
+    #son valores de P = 0.2637 siendo >0.05, estos datos nos dicen que no existen 
+    #diferencias significativas entre las varianzas de las dos especies; por lo 
+    #tanto si hay homogeneidad y se utilizará la prueba de T clásica.
+    
       # Revisar homogeneidad
         var.test(data_sub$petal.length ~ data_sub$variety)
 
@@ -128,12 +160,15 @@ table(data_sub$variety)
         t.test(data_sub$petal.length ~ data_sub$variety, alternative = "two.sided", 
                var.equal = F)
     
-  #Ejecute la prueba en R justificando el tipo de prueba (Welch cuando las 
-  #varianzas son diferentes o clásica, cuando las varainzas son iguales).
-    
-   help(Welch)
-    
-  #Calcule e interprete el tamaño del efecto (Cohen’s d)
+  
+  #Con esta prueba de T podemos dicer que el valor de p   (p=<2.2e-16) es < que 
+        #0.05, rechazamos la hipótesis nula y decimos que si hay diferencia 
+        #significativa entre las variedades Virginica y Versicolor en la variable
+        #petal.length de la base de daros iris.
+        
+  #+Calcule e interprete el tamaño del efecto (Cohen’s d)
+  
+        
             # Medir el efecto del efecto
             
             cohens_efecto <- function(x,y) {
@@ -145,6 +180,13 @@ table(data_sub$variety)
             
             d1_cal <- cohens_efecto(df_Versicolor$petal.length, df_Virginica$petal.length)
             d1_cal
+  
+            abs(d1_cal)
+            
+            #Este valor de  cohens no dice que hay un diferencia enorme en la
+            #variable petal.length y esto nos lleva al inicio en objeticos que 
+            #podemos decir que tanto en términos estadisticos como en biologicos
+            #si hay diferencia entre las variedades y el largo del petalo.
             
 
 #Visualización
@@ -153,26 +195,32 @@ table(data_sub$variety)
             colores <-c ("navajowhite", "salmon")
             
             # Crear un boxplot data_sub
+            
+            data_sub$variety<-droplevels(data_sub$variety)
             boxplot (data_sub$petal.length~ data_sub$variety, col = colores,
                      main = "Distribución del largo de pétalo en 2 especies",
                      xlab = "Variedad", 
                      ylab = "Largo de pétalo (cm)")
               
+            # Crear un violinplot data_sub
+            #Instalar vioplot
             
-           violinplot (data_sub$petal.length~ data_sub$variety, col = colores,
-                     main = "Distribución del largo de pétalo en 2 especies",
-                     xlab = "Variedad", 
-                     ylab = "Largo de pétalo (cm)")
+            library(vioplot)
+            vioplot(data_sub)
+            
+            gglot(data_sub,aes(x = variety, y =petal.length, fill = variety))+
+              geom_boxplot()+labs(title = "Distribución del largo de pétalo en
+                      2 especies", x = "Variedad", y= "Largo de pétalo (cm)")
     
 #Informe escrito:
     #Redacte una síntesis (máx. 1 cuartilla) que incluya:
       #• Planteamiento del problema y de las hipótesis.
       #• Resultados numéricos y gráficos.
       #• Interpretación estadística y biológica.
-#Se realizó una prueba t para muestras independientes ( Ctrl vs Fert),
-#asumiendo varianzas iguales. Se encontró una diferencia, t(40) = -2.981253, 
-#p =0.00487. El grupo Fert mostró una media mayot (0.9066667) que el grupo 
-#Ctrl (0.767619). La diferencia de medias fue de -0.139 y el IC 95% = 
+#Se realizó una prueba t para muestras independientes ( Versicolor vs Virginica),
+#comprobando varianzas iguales. Se encontró una diferencia, t(98) = -12.604, 
+#p =< 2.2e-16. El grupo Virginica mostró una media mayor (5.552) que el grupo 
+#Versicolor (4.26). La diferencia de medias fue de 1.292 y el IC 95% = 
 #[-0.23, -0.04]. El tamaño del efecto fue grande (d=-0.9200347) lo que indica 
 #que la fertilización tuvo un efecto sustancial sobre el índice de calidad.
     
