@@ -203,17 +203,61 @@ data_sub
                      xlab = "Variedad", 
                      ylab = "Largo de pétalo (cm)")
               
-           
-#Informe escrito:
-    #Redacte una síntesis (máx. 1 cuartilla) que incluya:
-      #• Planteamiento del problema y de las hipótesis.
-      #• Resultados numéricos y gráficos.
-      #• Interpretación estadística y biológica.
+
 #Se realizó una prueba t para muestras independientes ( Versicolor vs Virginica),
 #comprobando varianzas iguales. Se encontró una diferencia, t(98) = -12.604, 
 #p =< 2.2e-16. El grupo Virginica mostró una media mayor (5.552) que el grupo 
 #Versicolor (4.26). La diferencia de medias fue de 1.292 y el IC 95% = 
 #[-0.23, -0.04]. El tamaño del efecto fue grande (d=-2.520756) lo que indica 
 #que la variedad tuvo un efecto sustancial sobre el largo del petalo.
-    
             
+
+                       
+                        #Informe escrito:
+    #Redacte una síntesis (máx. 1 cuartilla) que incluya:
+      #• Planteamiento del problema y de las hipótesis.
+      #• Resultados numéricos y gráficos.
+      #• Interpretación estadística y biológica.
+
+            #• Planteamiento del problema y de las hipótesis.
+            
+#De la base de datos iris saber si hay diferencia del el largo de petalo entre
+#las variedades Versicolor y Virginica.De aqui la pregunta que me realice fue:
+    #¿Hay diferencia significativa en la longitud de los pétalos (Petal.Length)
+    # entre las variedades Versicolor y Virginica de la base de datos iris?
+ #Plantee formalmente las hipótesis estadísticas para una prueba t de dos 
+  #muestras independientes (two.sided).
+     # + H0 (nula): No existen diferencias significativas entre la longitud de 
+      #los petalos de las variedades Versicolor y Virginica de la base de datos iris.
+     # + H1 (alternativa): Existen diferencias significativas entre la longitud 
+      #de los petalos de las variedades Versicolor y Virginica de la base de datos iris.
+            
+            #• Resultados numéricos y gráficos.
+      #Los resultados numéricos fueron:
+  #Se realizó una prueba t para muestras independientes ( Versicolor vs Virginica),
+  #comprobando varianzas iguales. Se encontró una diferencia, t(98) = -12.604, 
+  #p =< 2.2e-16. El grupo Virginica mostró una media mayor (5.552) que el grupo 
+  #Versicolor (4.26). La diferencia de medias fue de 1.292 y el IC 95% = 
+  #[-0.23, -0.04]. El tamaño del efecto fue grande (d=-2.520756) lo que indica 
+  #que la variedad tuvo un efecto sustancial sobre el largo del petalo.
+
+                   #Los resultados gráficos mostraron
+# Las gráficas tanto la de inicio (practica) como la de resultados muestran 
+# claramente que si hay una muy significante diferencia entre las variedades cuando
+# las evaluamos por el largo de petalo, aunque se puede observar que pudiera haber 
+# algo de valores iguales en tanto que pudieramos decir que la variedades versicolor 
+# y virginica puede haber erros en cuanto a la clasificación de variedades ya que 
+# los valores máximos de versicolor pueden confundir con los valores mínimos de 
+# virginica y es por eso que se uso la prueba de T clásica para estas dos variedades
+  
+            #• Interpretación estadística y biológica.
+            
+#Estadisticamente determinamos que si hay diferencia enorme con el valor del largo
+ #de petalo entre as variedades versicolor y virginica ya que el valor del efecto
+ #del efecto evaluado por el método Cohen´s no dio un valor por arriba del criterio 
+ #de efecto grande.
+#Hablando biologicamente el largo del petalo de la especie iris es fundamental para
+  #detefrminar a la variedad que corresponde y estadisticamente esta respaldado.
+            
+            
+    
