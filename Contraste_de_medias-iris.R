@@ -192,27 +192,18 @@ data_sub
 #Visualización
     # Genere una gráfica comparativa (boxplot, violinplot, etc.) que muestre 
     #las diferencias entre especies.
-            colores <-c ("navajowhite", "salmon")
+            colores <-c ("navajowhite", "skyblue")
             
             # Crear un boxplot data_sub
+  
             
-            data_sub$variety<-droplevels(data_sub$variety)
+           
             boxplot (data_sub$petal.length~ data_sub$variety, col = colores,
                      main = "Distribución del largo de pétalo en 2 especies",
                      xlab = "Variedad", 
                      ylab = "Largo de pétalo (cm)")
               
-            # Crear un violinplot data_sub
-            #Instalar vioplot
-            
-            library(vioplot)
-            vioplot(data_sub)
-            
-            
-            gglot(data_sub,aes(x = variety, y =petal.length, fill = variety))+
-              geom_boxplot()+labs(title = "Distribución del largo de pétalo en
-                      2 especies", x = "Variedad", y= "Largo de pétalo (cm)")
-    
+           
 #Informe escrito:
     #Redacte una síntesis (máx. 1 cuartilla) que incluya:
       #• Planteamiento del problema y de las hipótesis.
@@ -225,3 +216,4 @@ data_sub
 #[-0.23, -0.04]. El tamaño del efecto fue grande (d=-0.9200347) lo que indica 
 #que la fertilización tuvo un efecto sustancial sobre el índice de calidad.
     
+            
