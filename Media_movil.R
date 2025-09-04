@@ -21,5 +21,5 @@ plot(cont, set_mov$movil, type = "l",
   xlab = "Número de observaciones",
   ylab = "Media móvil")
 abline(h = mean(setosa$Sepal.Length),
-    col= "salmon")
+    col= "indianred")
 mean(setosa$Sepal.Length)
