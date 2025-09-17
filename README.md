@@ -22,7 +22,7 @@
   +# Crear el gráfico de barras con nombres
   +# Manera de hacerlo en clase
   
-  
+   
 **Semana 3** (21/08/2025)
 
   +Importamos desde excel el archivo Temperatura de excel
