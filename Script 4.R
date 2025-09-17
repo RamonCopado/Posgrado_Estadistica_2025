@@ -68,4 +68,3 @@ d1_cal
 
 # Reportar resultado
 # Se realizó una prueba t para muestras independientes ( Ctrl vs Fert),asumiendo varianzas iguales. Se encontró una diferencia, t(40) = -2.981253, p =0.00487. El grupo Fert mostró una media mayot (0.9066667) que el grupo Ctrl (0.767619). La diferencia de medias fue de -0.139 y el IC 95% = [-0.23, -0.04]. El tamaño del efecto fue grande (d=-0.9200347) lo que indica que la fertilización tuvo un efecto sustancial sobre el índice de calidad.
-

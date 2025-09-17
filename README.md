@@ -10,11 +10,7 @@
   + Sincronizar nube y computadora
   + Credenciales Git
   + Sinc
-<<<<<<< HEAD
-  
-##semana 2 (2)
 
-=======
 
 **Semana 2** (14/08/2025)
   +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
@@ -64,3 +60,13 @@
 **Semana 5**(04/09/2025)
   +media movil
   +Contraste de medias
+  +Laboratorio 2
+  
+**Semana 6** (11/09/2025)
+  +Retroalimentación
+  
+**Semana 7** (18/09/2025)
+
+
+**Semana 8** (25/09/2025)
+
