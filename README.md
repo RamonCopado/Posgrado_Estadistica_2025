@@ -1,8 +1,9 @@
 # Posgrado Estadistica 2025
 
-Material del curso del Posgrado de Experimentación y Métodos Estadísticos en MCF y DCMRN
+  +Material del curso de Posgrado del programa DMRN
+  +Estadística en la investigación científica
 
-## Contenido del curso
+## Contenido del curso (8 semanas 07/08/2025 - 02/10/2025)
 
 **Semana 1** (07/08/2025): Inicio del curso :fire: :smiley:
   + Crear repositorio
@@ -16,7 +17,7 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Operadores R abs, sqrt, log
   +# Para comentarios
   +Se Realizo Laboratorio 1
-  +# Ejercicio yo solo graficar y ponerle nombres
+  +# Ejercicio yo solo graficar y ponerle nombres a titulos de gráficos
   +# Crear el gráfico de barras con nombres
   +# Manera de hacerlo en clase
   
@@ -53,3 +54,7 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Un clasico error estadistico
   +Medir el efecto del efecto
   +Identificamos Hipotesis nula, Alternativa
+  
+**Semana 5 (4/09/2025)
+  +Contraste de medias
+
