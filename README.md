@@ -10,6 +10,11 @@
   + Sincronizar nube y computadora
   + Credenciales Git
   + Sinc
+<<<<<<< HEAD
+  
+##semana 2 (2)
+
+=======
 
 **Semana 2** (14/08/2025)
   +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
@@ -55,6 +60,7 @@
   +Medir el efecto del efecto
   +Identificamos Hipotesis nula, Alternativa
   
-**Semana 5 (4/09/2025)
+  
+**Semana 5**(04/09/2025)
+  +media movil
   +Contraste de medias
- 
