@@ -1,4 +1,4 @@
-**Script 5 o 8**
+**Script 5 o semana 7**
   18/09/2025
 #  Ramón Copado García
   
@@ -86,3 +86,10 @@ plot(TukeyHSD(crop.aov))
 
 library(ggplot2)
 
+ggplot(crop, aes(x=fertilizer, y= yield, fill = fertilizer))+
+  geom_violin(alpha = 0.5) + 
+  geom_jitter(col = "indianred")+
+  geom_boxplot(width = 0.1, col = "White")+
+  theme_light()
+  labs(x ="Fertilizante", 
+       y= "Rendimiento (Ton/ha.")
