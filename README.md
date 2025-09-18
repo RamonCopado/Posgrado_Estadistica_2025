@@ -1,19 +1,16 @@
 # Posgrado Estadistica 2025
 
-Material del curso del Posgrado de Experimentación y Métodos Estadísticos en MCF y DCMRN
+  +Material del curso de Posgrado del programa DMRN
+  +Estadística en la investigación científica
 
-## Contenido del curso
+## Contenido del curso (8 semanas 07/08/2025 - 02/10/2025)
 
 **Semana 1** (07/08/2025): Inicio del curso :fire: :smiley:
   + Crear repositorio
   + Sincronizar nube y computadora
   + Credenciales Git
   + Sinc
-<<<<<<< HEAD
-  
-##semana 2 (2)
 
-=======
 
 **Semana 2** (14/08/2025)
   +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
@@ -21,12 +18,12 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Operadores R abs, sqrt, log
   +# Para comentarios
   +Se Realizo Laboratorio 1
-  +# Ejercicio yo solo graficar y ponerle nombres
+  +# Ejercicio yo solo graficar y ponerle nombres a titulos de gráficos
   +# Crear el gráfico de barras con nombres
   +# Manera de hacerlo en clase
   
-  
-**Semana 3** (21/08/2025)
+   
+**Semana 3** (21/08/2025) script1
 
   +Importamos desde excel el archivo Temperatura de excel
   +Importamos desde paguina de gobierno un archivo .CSV
@@ -44,7 +41,7 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Importamos datos desde web
   
 
-**Semana 4** (28/08/2025)
+**Semana 4** (28/08/2025) script 2
   +Importar desde paguina de Dr. Marco archivo excel Caliadad de plantula
   +Sacar medias 
   +Sacar desviación estandar
@@ -60,8 +57,18 @@ Material del curso del Posgrado de Experimentación y Métodos Estadísticos en 
   +Identificamos Hipotesis nula, Alternativa
   
   
-  
-**Semana 5**(04/09/2025)
+**Semana 5**(04/09/2025) script 3 iris
   +media movil
+  +Contraste de medias
+  +Laboratorio 2
   
->>>>>>> 06c25ae49ecab5565b7a697efaa5a77bdd8d549d
+**Semana 6** (11/09/2025)
+  +Retroalimentación
+  
+**Semana 7** (18/09/2025)
+  +Analisis de varianza
+    +Anova unifactorial o de un solo factor
+    +Script 5
+
+**Semana 8** (25/09/2025)
+
