@@ -105,7 +105,7 @@ variety<-("Versicolor,Virginica")
 
 data_sub <-subset(iris, variety %in% c("Versicolor","Virginica"))
 table(data_sub$variety)
-data_sub
+
 
 
 #Instrucción de tarea
