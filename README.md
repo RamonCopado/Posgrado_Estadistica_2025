@@ -23,7 +23,7 @@
   +# Manera de hacerlo en clase
   
    
-**Semana 3** (21/08/2025)
+**Semana 3** (21/08/2025) script1
 
   +Importamos desde excel el archivo Temperatura de excel
   +Importamos desde paguina de gobierno un archivo .CSV
@@ -41,7 +41,7 @@
   +Importamos datos desde web
   
 
-**Semana 4** (28/08/2025)
+**Semana 4** (28/08/2025) script 2
   +Importar desde paguina de Dr. Marco archivo excel Caliadad de plantula
   +Sacar medias 
   +Sacar desviación estandar
@@ -57,7 +57,7 @@
   +Identificamos Hipotesis nula, Alternativa
   
   
-**Semana 5**(04/09/2025)
+**Semana 5**(04/09/2025) script 3 iris
   +media movil
   +Contraste de medias
   +Laboratorio 2
@@ -66,7 +66,9 @@
   +Retroalimentación
   
 **Semana 7** (18/09/2025)
-
+  +Analisis de varianza
+    +Anova unifactorial o de un solo factor
+    +Script 5
 
 **Semana 8** (25/09/2025)
 
