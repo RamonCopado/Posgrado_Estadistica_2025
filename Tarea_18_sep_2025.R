@@ -14,7 +14,7 @@ summary(crop)
 
 colores <-c ("navajowhite", "salmon", "skyblue")
 
-# Crear un boxplot Fertilizante
+# Crear un boxplot Bloque
 
 boxplot (crop$yield ~ crop$block, 
          col = colores,
@@ -36,7 +36,11 @@ shapiro.test(subset(crop$yield, crop$block=="4"))
 bartlett.test(crop$yield~crop$block)#sirve para tres varianzas que comparar
 
 #Ho = 1=2=3=4
-#1Ha = 1=2 no igual 3 o no igual a 2
+#1Ha = 1=2=3 no igual 4 
+#1Ha = 1=2=4 no igual 3
+#1Ha = 1=3=4 no igual 2
+#1Ha = 2=3=1 no igual 4
+#1Ha = 3=2=1 no igual 4
 
 #Se acepta Ho
 
@@ -50,8 +54,8 @@ crop.aov<-aov(crop$yield~crop$block)
 summary(crop.aov)
 
 # LSD determinar el valor
-qt(.975,93)
-sqrt((2*0.3859)/32)*qt(.975,93) #diferencia mínima de las medias que debe existir
+qt(.975,92)
+sqrt((3*0.3951)/24)*qt(.975,93) #diferencia mínima de las medias que debe existir
 tapply(crop$yield, crop$block, mean)
 
 #Primer diferencia de medias F1 vs F2
@@ -62,7 +66,7 @@ tapply(crop$yield, crop$block, mean)
 176.7570-177.3562 #si hay diferencia
 
 # Prueba Tukey
-sqrt((2*0.3859)/32)*qtukey(.95, nmeans = 3, df = 93) #diferencia mínima de las                                                          medias que debe existir
+sqrt((3*0.3951)/24)*qtukey(.95, nmeans = 4, df = 92) #diferencia mínima de las                                                          medias que debe existir
 
 #Primer diferencia de medias F1 vs F2
 176.7570 - 176.9332 #no hay diferencia
