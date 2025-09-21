@@ -1,4 +1,4 @@
-#  Ramón Copado García
+#  RamónCopado García
 
 #Análisis de Variaza
 #Productividad de cultivo
@@ -37,12 +37,12 @@ bartlett.test(crop$yield~crop$block)#sirve para tres varianzas que comparar
 
 #Ho = 1=2=3=4
 #1Ha = 1=2=3 no igual 4 
-#1Ha = 1=2=4 no igual 3
-#1Ha = 1=3=4 no igual 2
-#1Ha = 2=3=1 no igual 4
-#1Ha = 3=2=1 no igual 4
+#2Ha = 1=2=4 no igual 3
+#3Ha = 1=3=4 no igual 2
+#4Ha = 2=3=1 no igual 4
+#5Ha = 3=2=1 no igual 4
 
-#Se acepta Ho
+#Se acepta Ha
 
 #Prueba ANOVA
 crop.aov<-aov(crop$yield~crop$block+crop$block)
@@ -54,45 +54,44 @@ crop.aov<-aov(crop$yield~crop$block)
 summary(crop.aov)
 
 # LSD determinar el valor
-qt(.975,92)
+qt(.975,93)
 sqrt((3*0.3951)/24)*qt(.975,93) #diferencia mínima de las medias que debe existir
 tapply(crop$yield, crop$block, mean)
 
 #Primer diferencia de medias F1 vs F2
-176.7570 - 176.9332 #no hay diferencia
-#Primer diferencia de medias F2 vs F3
-176.9332-177.3562 #si hay deferencia
-#Primer diferencia de medias F2 vs F3
-176.7570-177.3562 #si hay diferencia
+176.8564 - 177.3169 #si hay diferencia
+#Segunda diferencia de medias F1 vs F3
+176.8564 - 176.7126 #no hay diferencia
+#Tercer diferencia de medias F1 vs F4
+176.8564 - 177.1760 #no hay diferencia
+#Cuarta diferencia de medias F2 vs F3
+177.3169 - 176.7126 #si hay deferencia
+#Quinta diferencia de medias F2 vs F4
+177.3169 - 177.1760 #no hay diferencia
+#Sexta diferencia de medias F3 vs F4
+176.7126 - 177.1760 #si hay diferencia
 
 # Prueba Tukey
-sqrt((3*0.3951)/24)*qtukey(.95, nmeans = 4, df = 92) #diferencia mínima de las                                                          medias que debe existir
+sqrt((3*0.3951)/24)*qtukey(.95, nmeans = 4, df = 93) #diferencia mínima de las                                                          medias que debe existir
 
 #Primer diferencia de medias F1 vs F2
-176.7570 - 176.9332 #no hay diferencia
-#Primer diferencia de medias F2 vs F3
-176.9332-177.3562 #no hay deferencia
-#Primer diferencia de medias F2 vs F3
-176.7570-177.3562 #si hay diferencia
+176.8564 - 177.3169 #si hay diferencia
+#Segunda diferencia de medias F1 vs F3
+176.8564 - 176.7126 #no hay diferencia
+#Tercer diferencia de medias F1 vs F4
+176.8564 - 177.1760 #no hay diferencia
+#Cuarta diferencia de medias F2 vs F3
+177.3169 - 176.7126 #si hay deferencia
+#Quinta diferencia de medias F2 vs F4
+177.3169 - 177.1760 #no hay diferencia
+#Sexta diferencia de medias F3 vs F4
+176.7126 - 177.1760 #si hay diferencia
 
-#solo hay diferencia en F1 y F3
+#se aceptan las hipótesis 1Ha, 4Ha y 6Ha
 
 #Gráficar con Tukey
 
 TukeyHSD(crop.aov)#aqui si hay diferencias como en el LSD
 plot(TukeyHSD(crop.aov))
 
-#####TAREA HACER LO MISMO PARA BLOCKES
-
-
-
-library(ggplot2)
-
-ggplot(crop, aes(x=block, y= yield, fill = block))+
-  geom_violin(alpha = 0.5) + 
-  geom_jitter(col = "indianred")+
-  geom_boxplot(width = 0.1, col = "White")+
-  theme_light()
-labs(x ="Bloque", 
-     y= "Rendimiento (Ton/ha.")
 
