@@ -12,7 +12,7 @@ crop$block<-as.factor(crop$block)
 crop$fertilizer<-as.factor(crop$fertilizer)
 summary(crop)
 
-colores <-c ("navajowhite", "salmon", "skyblue")
+colores <-c ("navajowhite", "salmon", "skyblue", "green")
 
 # Crear un boxplot Bloque
 
@@ -87,11 +87,11 @@ sqrt((3*0.3951)/24)*qtukey(.95, nmeans = 4, df = 93) #diferencia mínima de las 
 #Sexta diferencia de medias F3 vs F4
 176.7126 - 177.1760 #si hay diferencia
   
-#se aceptan las hipótesis 1Ha, 4Ha y 6Ha
 
 #Gráficar con Tukey
 
 TukeyHSD(crop.aov)#aqui si hay diferencias como en el LSD
 plot(TukeyHSD(crop.aov))
 
+# Se aceptan las hipótesis 1Ha, 4Ha y 6Ha
 
