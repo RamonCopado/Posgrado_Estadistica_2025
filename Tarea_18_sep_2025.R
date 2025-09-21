@@ -86,7 +86,7 @@ sqrt((3*0.3951)/24)*qtukey(.95, nmeans = 4, df = 93) #diferencia mínima de las 
 177.3169 - 177.1760 #no hay diferencia
 #Sexta diferencia de medias F3 vs F4
 176.7126 - 177.1760 #si hay diferencia
-
+  
 #se aceptan las hipótesis 1Ha, 4Ha y 6Ha
 
 #Gráficar con Tukey
