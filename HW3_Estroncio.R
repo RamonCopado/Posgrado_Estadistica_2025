@@ -250,7 +250,6 @@ q_crit
 
 t_crit <- qt(0.975, df = gl)   # 0.975 porque es bilateral a 5%
 t_crit
-
 # Calcule la diferencia mínima significativa con Tukey.
 # Parámetros
 k <- length(levels(grupo))         # número de grupos = 5
