@@ -11,14 +11,12 @@
 
 #Cuadro 1: Concentración de estroncio (mg/ml) en cinco cuerpos de agua (n = 6).
 
-Estroncio <- read_excel("C:/Users/Ramon/Desktop/forestales/Estroncio.xlsx", 
-                              col_types = c("text", "numeric", "numeric", 
-                                            "numeric", "numeric", "numeric"))
+
+Estroncio <- read.csv("Estroncio_final.csv", header = T)
 View(Estroncio)
 
 Estroncio$Media <- rowMeans(Estroncio [,2:6],1)
 head(Estroncio)
-
 write.csv(Estroncio, "Estroncio_final.csv")
 
 Estroncio_final <- Estroncio [, 2:6]
