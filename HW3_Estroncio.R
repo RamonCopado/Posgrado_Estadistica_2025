@@ -25,15 +25,6 @@ head (Estroncio_final[, c(1,1:5)])
 View (Estroncio_final)
 
 
-
-#Lo siguiente es para poder usar los numeros como factores
-#Estroncio$Muestra <-as.factor(Estroncio$Muestra)
-#Estroncio$Graysons_Pond <-as.factor(Estroncio$Graysons_Pond)
-#Estroncio$Beaver_Lake <-as.factor(Estroncio$Beaver_Lake)
-#Estroncio$Anglers_cove <-as.factor(Estroncio$Anglers_cove)
-#Estroncio$Appletree_Lake <-as.factor(Estroncio$Appletree_Lake)
-#Estroncio$Rock_River <-as.factor(Estroncio$Rock_River)
-
 summary(Estroncio_final)
 
 # Inspeccionar mi objeto Estroncio
@@ -322,7 +313,7 @@ comparacion
 
 #  Interpretación
 # ¿Qué cuerpo de agua presenta las concentraciones más altas?
-  #El resultado mostro que tanto por LSD ó por Tukey si hay diferencia significativa
+  #El resultado mostró que tanto por LSD ó por Tukey si hay diferencia significativa
 
 # ¿Qué sitios no difieren entre sí?
     # El resultado de ese análisis muestra que cuando hablamos de los pares de 
