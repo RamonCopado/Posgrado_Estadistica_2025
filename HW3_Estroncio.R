@@ -151,8 +151,9 @@ comparaciones$p.value
 #COMPARANDO CON OTRO PAQUETE SEGUN LA RED
 
 # install.packages("agricolae")
-
 library(agricolae)
+#install.packages("dplyr")   # Solo la primera vez
+library(dplyr)   
 
 # Datos
 grupo <- factor(rep(c("Graysons_Pond", "Beaver_Lake", "Anglers_Cove", 
@@ -168,30 +169,45 @@ modelo <- aov(mediciones ~ grupo)
 
 # Prueba LSD
 resultado_lsd <- LSD.test(modelo, "grupo", p.adj = "none")
-
-
 # Mostrar resultados
 print(resultado_lsd)
 
 # Medias por Sitio
 medias <- tapply(mediciones, grupo, mean)
 medias
-# 1. Medias de los grupos
+# Medias de los grupos
 medias <- resultado_lsd$means$mediciones
 names(medias) <- rownames(resultado_lsd$means)
 
-# 2. Calcular diferencias absolutas
+# Calcular diferencias absolutas
 dif_abs <- abs(outer(medias, medias, "-"))
 colnames(dif_abs) <- rownames(dif_abs) <- names(medias)
 
-# 3. Extraer valor LSD
+#  Extraer valor LSD
 valor_lsd <- resultado_lsd$statistics$LSD
 
-# 4. Crear matriz booleana: TRUE si diferencia > LSD
+#  Crear matriz booleana: TRUE si diferencia > LSD
 sig_dif <- dif_abs > valor_lsd
 
-#install.packages("dplyr")   # Solo la primera vez
-library(dplyr)     AQUI VOY
+
+# Pasar a data.frame
+tabla_dif <- as.data.frame(as.table(dif_abs))
+
+# Convertir Var1 y Var2 a caracteres antes de comparar
+tabla_dif <- subset(tabla_dif, as.character(Var1) < as.character(Var2))
+
+# Renombrar columnas
+colnames(tabla_dif) <- c("Grupo1", "Grupo2", "Diferencia")
+
+# Agregar columnas LSD y significancia
+tabla_dif$Diferencia    <- round(tabla_dif$Diferencia, 2)
+tabla_dif$LSD           <- round(valor_lsd, 2)
+tabla_dif$Significativa <- tabla_dif$Diferencia > valor_lsd
+
+# Mostrar tabla final
+tabla_dif
+
+
 # Determine cuáles pares son significativamente diferentes.
 # Mostrar resultados
 list(
@@ -200,105 +216,134 @@ list(
   diferencias_absolutas = round(dif_abs, 2),
   significativas = sig_dif)
 
-# Convertir matriz a tabla tidy
-tabla_dif <- as.data.frame(as.table(dif_abs)) |>
-  filter(Var1 < Var2) |>
-  rename(Grupo1 = Var1, Grupo2 = Var2, Diferencia = Freq) |>
-  mutate(
-    Diferencia = round(Diferencia, 2),
-    LSD = round(valor_lsd, 2),
-    Significativa = Diferencia > valor_lsd
-  )
+# Valor LSD
+valor_lsd <- resultado_lsd$statistics$LSD
 
-#Graysons_Pond tiene diferencia significativa con todos
-#Beaver_Lake tiene diferencia significativa con: Anglers_Cove, Rock_River y Graysons_Pond
-#Anglers_Cove tiene diferencia significativa con: Beaver_Lake, Rock_River y Graysons_Pond
-#
+# Pasar a data.frame y filtrar con subset (solo Var1 < Var2)
+tabla_dif <- as.data.frame(as.table(dif_abs))
 
 
-colores <-c ("navajowhite", "salmon", "skyblue", "yellow","green")
+# Renombrar columnas
+colnames(tabla_dif) <- c("Grupo1", "Grupo2", "Diferencia")
 
-#Crear un boxplot con las Muestras de Estroncio
-boxplot(Estroncio_final, col = colores,
-        main = "Cuerpos de agua",
-        xlab = "Lugares", 
-        ylab = "Concentracion (mg/ml)")
+# Agregar columnas LSD y significancia
+tabla_dif$Diferencia   <- round(tabla_dif$Diferencia, 2)
+tabla_dif$LSD          <- round(valor_lsd, 2)
+tabla_dif$Significativa <- tabla_dif$Diferencia > valor_lsd
+
+# Mostrar tabla final
+tabla_dif
+
+#Prueba de Tukey HSD
+tukey_res <- TukeyHSD(modelo)
+# Ver resultados
+print(tukey_res)
+
+##diff: diferencia entre medias de los grupos.
+##lwr / upr: intervalos de confianza del 95%.
+##p adj: valor p ajustado por Tukey.
+
+#Obtenga el valor crítico; q0,05(k, glerror)
+
+# Grados de libertad residuales
+gl <- df.residual(modelo)
+
+# MS_residual
+MS_res <- summary(modelo)[[1]]["Residuals", "Mean Sq"]
+
+# Valor crítico t
+k <- 5
+gl_error <- 25
+
+# Valor crítico q para alfa=0.05
+q_crit <- qtukey(0.95, k, gl_error)  # 0.95 porque es unilateral para nivel global 0.05
+q_crit
+
+t_crit <- qt(0.975, df = gl)   # 0.975 porque es bilateral a 5%
+t_crit
+
+# Calcule la diferencia mínima significativa con Tukey.
+# Parámetros
+k <- length(levels(grupo))         # número de grupos = 5
+n_per_group <- tapply(mediciones, grupo, length)[1]  # 6
+gl_error <- df.residual(modelo)    # 25
+MS_error <- summary(modelo)[[1]]["Residuals","Mean Sq"]
+
+# Valor crítico q (studentized range)
+q_crit <- qtukey(0.95, nmeans = k, df = gl_error)
+
+# Error estándar usado por Tukey (para comparación de medias)
+SE <- sqrt(MS_error / n_per_group)
+
+# HSD (mínima diferencia significativa)
+HSD <- q_crit * SE
+
+# Mostrar resultados
+q_crit
+MS_error
+SE
+HSD
+
+#Compare los resultados con la prueba LSD: ¿los mismos pares resultan significativos?
+# ------------------ LSD ------------------
+resultado_lsd <- LSD.test(modelo, "grupo", p.adj = "none")
+medias <- resultado_lsd$means$mediciones
+names(medias) <- rownames(resultado_lsd$means)
+
+# Diferencias absolutas
+dif_abs <- abs(outer(medias, medias, "-"))
+colnames(dif_abs) <- rownames(dif_abs) <- names(medias)
+
+# Valor LSD
+valor_lsd <- resultado_lsd$statistics$LSD
+
+# Tabla LSD con pares en orden alfabético
+tabla_lsd <- as.data.frame(as.table(dif_abs))
+tabla_lsd <- subset(tabla_lsd, as.character(Var1) < as.character(Var2))
+colnames(tabla_lsd) <- c("Grupo1", "Grupo2", "Diferencia")
+tabla_lsd$Par <- paste(tabla_lsd$Grupo1, tabla_lsd$Grupo2, sep = "-")
+tabla_lsd$Signif_LSD <- tabla_lsd$Diferencia > valor_lsd
+
+# ------------------ Tukey ------------------
+tukey_res <- TukeyHSD(modelo)
+tabla_tukey <- as.data.frame(tukey_res$grupo)
+tabla_tukey$Par <- gsub(" ", "", rownames(tabla_tukey)) # pares como "B-A"
+# Reordenar pares alfabéticamente (A-B, no B-A)
+tabla_tukey$Par <- sapply(strsplit(tabla_tukey$Par, "-"),
+                          function(x) paste(sort(x), collapse = "-"))
+tabla_tukey <- aggregate(`p adj` ~ Par, data = tabla_tukey, FUN = mean)
+tabla_tukey$Signif_Tukey <- tabla_tukey$`p adj` < 0.05
+
+# ------------------ Comparación final ------------------
+comparacion <- merge(tabla_lsd[, c("Par", "Signif_LSD")],
+                     tabla_tukey[, c("Par", "Signif_Tukey")],
+                     by = "Par", all = TRUE)
+
+comparacion
+#R= Sí hay diferencia en los pares
+
+#  Interpretación
+# ¿Qué cuerpo de agua presenta las concentraciones más altas?
+  #El resultado mostro que tanto por LSD ó por Tukey si hay diferencia significativa
+
+# ¿Qué sitios no difieren entre sí?
+    # El resultado de ese análisis muestra que cuando hablamos de los pares de 
+    # sitios, Anglers_Cove y Appletree_Lake asi como Appletree_Lake y Beaver_Lake,
+    # que No hay significancia estadistica P<0.025 entre ellos y que el par de Sitios:
+    # Anglers_Cove y Beaver_Lake no tienen diferencia significativa P<0.05 entre elos
+
+# Desde el punto de vista ambiental, ¿qué implicaciones podrían tener estas diferencias en la
+  #calidad del agua?
+#Estas diferencias entre las comparaciones no hay un efecto grave en toma de deciciones 
+#ya que es solo agua en diferentes partes, pero cabe destacar que si fuera agua ya
+#lista parta hacer algun tipo de medicina o algo en el cuerpo humano si se tendria que
+#especificar el P<0.025, si esos cuerpos de agua fueran rios o se utilizaria para 
+#los animales o de aguanormal para uso diario el p<0.01, esto no lleva a que solo
+#posiblemente rock_River seria el más contaminado y hay que hacer otro analisis 
+#estadistico cambiando el valor de P.
 
 
 
 
 
-# Realizar la prueba post-hoc de Tukey
-tukey_resultado <- TukeyHSD(anova_resultado)
-
-# Mostrar el resultado de Tukey
-summary(tukey_resultado)
-
-
-
-
-
-
-# Prueba Tukey
-sqrt((2*0.3859)/32)*qtukey(.95, nmeans = 3, df = 93) #diferencia mínima de las                                                          medias que debe existir
-
-
-
-#Gráficar con Tukey
-
-TukeyHSD(crop.aov)#aqui si hay diferencias como en el LSD
-plot(TukeyHSD(crop.aov))
-
-
-
-
-modelo_anova <- aov(Estroncio$Muestra ~ Estroncio_final$Graysons_Pond+
-                      Estroncio_final$Beaver_Lake+Estroncio_final$Anglers_Cove+
-                      Estroncio_final$Appletree_Lake+Estroncio_final$Rock_River,
-                      data = Estroncio_final)
-summary(modelo_anova)
-
-
-
-
-
-
-
-
-#Prueba ANOVA
-#Estroncio_final$Graysons_Pond <-as.factor(Estroncio_final$Graysons_Pond)
-#Estroncio_final$Beaver_Lake <-as.factor(Estroncio_final$Beaver_Lake)
-#Estroncio_final$Anglers_Cove <-as.factor(Estroncio_final$Anglers_Cove)
-#Estroncio_final$Appletree_Lake <-as.factor(Estroncio_final$Appletree_Lake)
-#Estroncio_final$Rock_River <-as.factor(Estroncio_final$Rock_River)
-#Estroncio_final$Muestra <-as.factor(Estroncio_final$Muestra)
-
-summary(Estroncio_final)
-
-colores <-c ("navajowhite", "salmon", "skyblue", "yellow","green")
-
-#Crear un boxplot con las Muestras de Estroncio
-boxplot(Estroncio_final, col = colores,
-        main = "Cuerpos de agua",
-        xlab = "Lugares", 
-        ylab = "Concentracion (mg/ml)")
-
-
-
-
-
-
-
-
-Estroncio_final.aov<-aov(Estroncio_final$Graysons_Pond+Estroncio_final$Beaver_Lake+
-                         Estroncio_final$Anglers_Cove+Estroncio_final$Appletree_Lake+
-                         Estroncio_final$Rock_River)
-summary(Estroncio_final.aov)
-
-
-
-
-
-Se rechaza H0
-Prueba LSD
-
+ 
