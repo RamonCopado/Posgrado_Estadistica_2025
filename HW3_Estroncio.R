@@ -12,34 +12,24 @@
 #Cuadro 1: Concentración de estroncio (mg/ml) en cinco cuerpos de agua (n = 6).
 
 
-Estroncio <- read.csv("Estroncio_final.csv", header = T)
+Estroncio <- read.csv("Estroncio10.csv", header = T)
 View(Estroncio)
 
-Estroncio$Media <- rowMeans(Estroncio [,2:6],1)
-head(Estroncio)
-write.csv(Estroncio, "Estroncio_final.csv")
-
-Estroncio_final <- Estroncio [, 2:6]
-
-head (Estroncio_final[, c(1,1:5)])
-View (Estroncio_final)
-
-
-summary(Estroncio_final)
+summary(Estroncio)
 
 # Inspeccionar mi objeto Estroncio
-head(Estroncio_final) # Primeras 6 filas
-dim(Estroncio_final) #Numero de filas y columnas
-names(Estroncio_final) #Nombres de las columnas
-str(Estroncio_final) #Estructura del data frame
+head(Estroncio) # Primeras 6 filas
+dim(Estroncio) #Numero de filas y columnas
+names(Estroncio) #Nombres de las columnas
+str(Estroncio) #Estructura del data frame
 
 
-summary(Estroncio_final) #Resumen estadistico
+summary(Estroncio) # Resumen estadistico
 
 colores <-c ("navajowhite", "salmon", "skyblue", "yellow","green")
 
 #Crear un boxplot con las Muestras de Estroncio
-boxplot(Estroncio_final, col = colores,
+boxplot(Estroncio, col = colores,
         main = "Cuerpos de agua",
         xlab = "Lugares", 
         ylab = "Concentracion (mg/ml)")
