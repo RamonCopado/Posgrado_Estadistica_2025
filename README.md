@@ -71,4 +71,5 @@
     +Script 5
 
 **Semana 8** (25/09/2025)
+Regresion Lineal Simple
 
