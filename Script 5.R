@@ -92,4 +92,6 @@ ggplot(crop, aes(x=fertilizer, y= yield, fill = fertilizer))+
   geom_boxplot(width = 0.1, col = "White")+
   theme_light()
   labs(x ="Fertilizante", 
-       y= "Rendimiento (Ton/ha.")
+       y= "Rendimiento (Ton/ha.)")
+
+  
