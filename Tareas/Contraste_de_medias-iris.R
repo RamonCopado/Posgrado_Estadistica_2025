@@ -6,7 +6,7 @@
 ##Script 5
 ##30/8/2025
 ##Ramón Copado García
-##Matricula 1059439
+##Matrícula 1059439
 
 
 ##Objetivo

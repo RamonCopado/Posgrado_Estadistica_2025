@@ -1,10 +1,10 @@
-#Script_3
+# Script_3
 # Ramón Copado
 # 21/08/2025
 # Semana 3
 
 # Importar Datos excel 
-temperatura <- read.csv("temperatura.csv")
+temperatura  <- read.csv ("temperatura.csv")
 View(temperatura)
 
 # Inspeccionar mi objeto temperatura
@@ -17,18 +17,17 @@ summary(temperatura) #Resumen estadistico
 
 names(temperatura) <- c("Anual", "Ene", "Feb", "Mar", "Abr",
                         "May","Jun", "Jul", "Ago", "Sep", 
-                        "Oct", "Nov", "Dic") #Corregir nombre de columna
+                        "Oct", "Nov", "Dic") # Corregir nombre de columna
 
 temperatura$media_anual <- rowMeans(temperatura [,2:13],1)
 head(temperatura)
 
-write.csv(temperatura, "temp_final.csv")
-
+write.csv(temperatura, "temp_final.csv" )
 temp <- temperatura [, 2:13]
-
+View(temp)
 temp <- temperatura[ , 2:13]
 temp10 <- temperatura[11:21 , 2:13]
-temperatura[2,2]
+temperatura[ 2, 2]
 colores <-c ("navajowhite", "salmon", "skyblue", "yellow")
 
 #Crear un boxplot con las temperaturas de 20 años 2000 a 2020

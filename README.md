@@ -38,13 +38,13 @@
   +names(temperatura) <- c("") para corregir nombres de columna
   +temperatura$media_anual <- rowMeans(temperatura [,2:13],1) head(temperatura) esto determinar medias por columnas y filas determinadas por los parentesis
   +colores<-c("navajowhite","salmon","skyblue") para indicar que colores queremos en la grafica
-  +boxplot(temp,col=colores,main="Comportamientotemperatura(2000a2020)",xlab="Meses",ylab=
+  +boxplot(temp,col=colores,main="Comportamiento temperatura (2000 a 2020)",xlab="Meses",ylab=
   +Importamos datos desde web
   
 
 **Semana 4** (28/08/2025) Script-4_Calidad_Plantula
 
-  +Importar desde paguina de Dr. Marco archivo excel Caliadad de plantula
+  +Importar desde página de Dr. Marco archivo excel Caliadad de plantula
   +Sacar medias 
   +Sacar desviación estandar
   +Sacar varianza
@@ -59,9 +59,11 @@
   +Identificamos Hipotesis nula, Alternativa
   
   
-**Semana 5**(04/09/2025) script 3 iris. Contraste_de_medias-iris
-  +media movil
+**Semana 5**(04/09/2025) script iris. Contraste_de_medias-iris
+  +Media movil, muestra media general 
   +Contraste de medias
+  + H0 La diferencia de ambas especies es 0
+  + H1 La diferencia de ambas especies es diferente a 0
   +Laboratorio 2 "Contraste_de_medias-iris"
   
 **Semana 6** (11/09/2025)
@@ -70,6 +72,8 @@
 **Semana 7** (18/09/2025)  Script 5
   +Analisis de varianza
     +Anova unifactorial o de un solo factor
+    +LSD es el valor mínimo que debe existir
+    +Tukey -Detectar diferencias entre tratamientos  1 cola
     +Tarea_18_sep_2025
 
 **Semana 8** (25/09/2025)  Scropt 8
