@@ -37,7 +37,7 @@ anova(fit.lm)
 # 0.7 <- 1    Correlación muy alta
 
 
-#library (lmtest)
+library (lmtest)
 
 bptest(fit.lm) #DETERMINAR SI HAY HOMOCEDASTICIDAD
 
