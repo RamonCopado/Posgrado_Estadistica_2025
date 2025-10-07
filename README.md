@@ -12,21 +12,22 @@
   + Sinc
 
 
-**Semana 2** (14/08/2025)
+**Semana 2** (14/08/2025) Script2. Laboratorio 1
+
   +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
   +Alt - para operar asignacion
   +Operadores R abs, sqrt, log
   +# Para comentarios
-  +Se Realizo Laboratorio 1
-  +# Ejercicio yo solo graficar y ponerle nombres a titulos de gráficos
+  +Se empezo a realizar Laboratorio 1
+  +# Ejercicio yo solo graficar y ponerle nombres a títulos de gráficos
   +# Crear el gráfico de barras con nombres
   +# Manera de hacerlo en clase
   
    
-**Semana 3** (21/08/2025) script1
+**Semana 3** (21/08/2025) script3.  Ejercicio-Temperatura
 
   +Importamos desde excel el archivo Temperatura de excel
-  +Importamos desde paguina de gobierno un archivo .CSV
+  +Importamos desde la página de gobierno un archivo .CSV
   +Nos mostro diferentes tipos de graficas
   +Inspeccionar mi objeto temperatura
   +head(temperatura) observamos las Primeras 6 filas y encabezado
@@ -41,7 +42,7 @@
   +Importamos datos desde web
   
 
-**Semana 4** (28/08/2025) script 2
+**Semana 4** (28/08/2025) script 4
   +Importar desde paguina de Dr. Marco archivo excel Caliadad de plantula
   +Sacar medias 
   +Sacar desviación estandar
@@ -57,19 +58,19 @@
   +Identificamos Hipotesis nula, Alternativa
   
   
-**Semana 5**(04/09/2025) script 3 iris
+**Semana 5**(04/09/2025) script 3 iris. Contraste_de_medias-iris
   +media movil
   +Contraste de medias
-  +Laboratorio 2
+  +Laboratorio 2 "Contraste_de_medias-iris"
   
 **Semana 6** (11/09/2025)
   +Retroalimentación
   
-**Semana 7** (18/09/2025)
+**Semana 7** (18/09/2025)  Script 5
   +Analisis de varianza
     +Anova unifactorial o de un solo factor
-    +Script 5
+    +Tarea_18_sep_2025
 
-**Semana 8** (25/09/2025)
-Regresion Lineal Simple
+**Semana 8** (25/09/2025)  Scropt 8
+ Regresion Lineal Simple
 
