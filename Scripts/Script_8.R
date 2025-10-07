@@ -1,5 +1,6 @@
 #Script 8
 #25/09/2025
+#Ramón Copado García
 
 
 ##REGRESION LINEAL SIMPLE
@@ -55,3 +56,4 @@ datos$residuales <- datos$harina-datos$recta
 SSE <- sum(datos$residuales^2)
 SSE/8
 sqrt(SSE/8)
+
