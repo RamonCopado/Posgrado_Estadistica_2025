@@ -59,7 +59,7 @@
   +Identificamos Hipotesis nula, Alternativa
   
   
-**Semana 5**(04/09/2025) script iris. Contraste_de_medias-iris
+**Semana 5**(04/09/2025) Contraste_de_medias-iris
   +Media movil, muestra media general 
   +Contraste de medias
   + H0 La diferencia de ambas especies es 0
