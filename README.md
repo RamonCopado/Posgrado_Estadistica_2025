@@ -1,5 +1,5 @@
 # Posgrado Estadistica 2025
-
+ 
   +Material del curso de Posgrado del programa DMRN
   +Estadística en la investigación científica
 
