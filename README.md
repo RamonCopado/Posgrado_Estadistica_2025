@@ -14,14 +14,14 @@
 
 **Semana 2** (14/08/2025) Script2. Laboratorio 1
 
- # +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
-  # +Alt - para operar asignacion
-  # +Operadores R abs, sqrt, log
-  # + usar # Para comentarios
-  # +Se empezo a realizar Laboratorio 1
-  # +# Ejercicio yo solo graficar y ponerle nombres a títulos de gráficos
-  # +# Crear el gráfico de barras con nombres
-  # +# Manera de hacerlo en clase
+  +Nos oriento el Dr. Marco Gzz. para hacer lo siguiente:
+  +Alt - para operar asignacion
+  +Operadores R abs, sqrt, log
+  + usar # Para comentarios
+  +Se empezó a realizar Laboratorio 1
+  +# Ejercicio yo solo graficar y ponerle nombres a títulos de gráficos
+  +# Crear el gráfico de barras con nombres
+  +# Manera de hacerlo en clase
   
    
 **Semana 3** (21/08/2025) script3.  Ejercicio-Temperatura
