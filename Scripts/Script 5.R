@@ -6,8 +6,7 @@
   #Productividad de cultivo
   
 #Anova unifactorial o de un solo factor
-
-  crop <-read.csv("crop_data.csv",header = T)
+  crop <- read.csv ("crop.data.csv", header = T)
   
   #Lo siguiente es para poder usar los numeros como factores
   crop$density<-as.factor(crop$density)
