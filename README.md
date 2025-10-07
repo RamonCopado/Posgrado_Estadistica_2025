@@ -77,5 +77,8 @@
     +Tarea_18_sep_2025
 
 **Semana 8** (25/09/2025)  Scropt 8
- Regresion Lineal Simple
+  + Regresion Lineal Simple
+  + Varianza de los errores
+  + (lmtest) library
+  + Homocedasticidad
 
