@@ -76,7 +76,7 @@
     +Tukey -Detectar diferencias entre tratamientos  1 cola
     +Tarea_18_sep_2025
 
-**Semana 8** (25/09/2025)  Scropt 8
+**Semana 8** (25/09/2025)  Script 8
   + Regresion Lineal Simple
   + Varianza de los errores
   + (lmtest) library
