@@ -82,3 +82,4 @@
   + (lmtest) library
   + Homocedasticidad
  
+![Gráfica de contribuciones](Gráfica/Contribuciones_Copado.PNG)
