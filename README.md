@@ -1,7 +1,7 @@
 # Posgrado Estadistica 2025
  
-  + Material del curso de Posgrado del programa DMRN
-  + Estadística en la investigación científica
+  + # Material del curso de Posgrado del programa DMRN
+  + # Estadística en la investigación científica
 
 ## Contenido del curso (8 semanas 07/08/2025 - 02/10/2025)
 
@@ -19,9 +19,9 @@
   + Operadores R abs, sqrt, log
   + usar # Para comentarios
   + Se empezó a realizar Laboratorio 1
-  + # Ejercicio yo solo graficar y ponerle nombres a títulos de gráficos
-  + # Crear el gráfico de barras con nombres
-  + # Manera de hacerlo en clase
+  + Ejercicio yo solo graficar y ponerle nombres a títulos de gráficos
+  + Crear el gráfico de barras con nombres
+  + Manera de hacerlo en clase
   
    
 **Semana 3** (21/08/2025) script3.  Ejercicio-Temperatura
