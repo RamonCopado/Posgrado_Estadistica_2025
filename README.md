@@ -81,5 +81,7 @@
   + Varianza de los errores
   + (lmtest) library
   + Homocedasticidad
+  
+  # Gráfica de contribuciones
  
 ![Gráfica de contribuciones](Gráfica/Contribuciones_Copado.PNG)
