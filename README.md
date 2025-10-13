@@ -3,6 +3,25 @@
   + # Material del curso de Posgrado del programa DMRN
   + # Estadística en la investigación científica
 
+## Introducción
+  + El uso de plataformas como la GitHub es una herramienta fundamental para la
+  investigación y en la práctica profesional, ya que ayuda en la organización del
+  trabajo académico y cientifico, Ya que la ciencia exige que los resultados sean
+  verificables y reproducibles, y GitHub es una plataforma reconocida mundialmente
+  para cumplir con esté propósito.
+  
+## Objetivo
+  + Desarrollar hábilidades de primer mundo con plataformas reconocidas mundialmente
+  
+## Utilidad
+  + Permite estructurar los materiales del curso, como los son las carpetas organizadas
+  de scripts, tareas, laboratorios, etc., lo que facilita el acceso y recuperación
+  rápida de la información
+  + Evidencía el proceso de aprendizaje y de trabajo, dandonos el historial de commits
+  nos refleja el avance progresivo del estudiante y muestra como se a desarrollado
+  cada actividad.
+  + Impulsa el trabajo colaborativo.
+
 ## Contenido del curso (8 semanas 07/08/2025 - 02/10/2025)
 
 **Semana 1** (07/08/2025): Inicio del curso :fire: :smiley:
