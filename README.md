@@ -82,3 +82,5 @@
   + (lmtest) library
   + Homocedasticidad
 
+
+> ![Gráfica de contribuciones](Insight_Contributors/RamonCopado´s.png)
