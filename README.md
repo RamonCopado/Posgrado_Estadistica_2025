@@ -83,5 +83,5 @@
   + Homocedasticidad
 
 
-> ![Gráfica de contribuciones](Posgrado_Estadistica_2025/Insight_Contributors/RamonCopado´s.png)
+> ![Gráfica de contribuciones](Posgrado_Estadistica_2025/Gráfica/Contribuciones_Copado.PNG)
 
