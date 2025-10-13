@@ -81,7 +81,4 @@
   + Varianza de los errores
   + (lmtest) library
   + Homocedasticidad
-
-
-> ![Gráfica de contribuciones](Posgrado_Estadistica_2025/Gráfica/Contribuciones_Copado.PNG)
-
+ 
